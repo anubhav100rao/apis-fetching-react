@@ -18,28 +18,22 @@ function Example() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch("https://api.github.com/users/anubhav100rao/repos").then((res) =>
-        res.json()
+      fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
+        (res) => res.json()
       ),
   });
 
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  console.log(data);
+
   return (
     <div>
-      {data.map((repo) => {
-        return (
-          <div key={repo.id}>
-            <h1>{repo.name}</h1> <span>{repo.language}</span>
-            <p>{repo.description}</p>
-            <strong>👀 {repo.subscribers_count}</strong>{" "}
-            <strong>✨ {repo.stargazers_count}</strong>{" "}
-            <strong>🍴 {repo.forks_count}</strong>
-          </div>
-        );
-      })}
+      <h1>{data.name}</h1>
+      <p>{data.description}</p>
+      <strong>👀 {data.subscribers_count}</strong>{" "}
+      <strong>✨ {data.stargazers_count}</strong>{" "}
+      <strong>🍴 {data.forks_count}</strong>
     </div>
   );
 }
