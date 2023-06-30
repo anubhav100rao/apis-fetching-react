@@ -92,18 +92,6 @@ function Example() {
                 language {repo.language}
               </div>
               <a
-                href={repo.url}
-                style={{
-                  padding: "0.5rem",
-                  textDecoration: "none",
-                  color: "black",
-                  fontWeight: "bold",
-                  backgroundColor: "orange",
-                }}
-              >
-                extra info
-              </a>
-              <a
                 href={repo.html_url}
                 style={{
                   padding: "0.5rem",
