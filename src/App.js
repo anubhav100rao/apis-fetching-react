@@ -28,7 +28,17 @@ function Example() {
   if (error) return "An error has occurred: " + error.message;
   console.log(data);
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1rem",
+        backgroundColor: "lightgray",
+        padding: "1rem",
+      }}
+    >
       {data.map((repo) => {
         return (
           <div key={repo.id}>
