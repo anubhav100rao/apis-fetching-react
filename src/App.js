@@ -18,9 +18,9 @@ function Example() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch("https://api.github.com/users/anubhav100rao/repos").then((res) =>
-        res.json()
-      ),
+      fetch(
+        "https://api.github.com/users/anubhav100rao/repos?per_page=120"
+      ).then((res) => res.json()),
   });
 
   if (isLoading) return "Loading...";
